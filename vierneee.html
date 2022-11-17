@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viernee</title>
+    <style>
+        
+        body {
+        background-color:orangered;
+        font-family: "Times News Roman";
+        }
+        .wrapper {overflow: auto;}
+        
+        #main {margin-left: 4px;}
+        
+        #leftsidebar {
+          float: none;
+          width: auto;
+        }
+        
+        #menulist {
+          margin: 0;
+          padding: 0;
+        }
+        
+        .menuitem {
+          background: #05deee;
+          border: 1px solid #e90a0a;
+          border-radius: 4px;
+          list-style-type: none;
+          margin: 4px;
+          padding: 2px;
+          text-align:center;
+          height: 50px;
+          line-height:50px;
+          vertical-align:center;
+        }
+        
+        @media screen and (min-width: 480px) {
+          #leftsidebar {width: 200px; float: right;}
+          #main {margin-right: 220px;}
+        }
+        @media print {
+            body {
+                background-color: rgb(252, 5, 5);
+                font-family: 'Arial', Times, serif;
+            }
+            #leftsidebar {
+                display:none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="leftsidebar">
+          <ul id="menulist">
+            <li class="menuitem">Vlad el Empalador</li>
+            <li class="menuitem">Drácula</li>
+            <li class="menuitem">Camarón</li>
+            <li class="menuitem">El cigala</li>
+            <li class="menuitem">El Fary</li>
+          </ul>
+        </div>
+        
+        <div id="main">
+          <h1>Vlad el Empalador</h1>
+          <p>Vlad III de Valaquia, conocido como Vlad el Empalador o Vlad Drácula, fue príncipe de Valaquia entre 1456 y 1462. Está considerado uno de los gobernantes más importantes de la historia de Valaquia y héroe nacional de Rumanía. Fue el segundo hijo del príncipe Vlad II Dracul de Valaquia.</p>
+          <p>Fue el segundo hijo del príncipe Vlad II Dracul de Valaquia. Vlad y su hermano menor, Radu, estuvieron como rehenes en el Imperio otomano en 1442 para asegurar la lealtad de su padre. Dracul y su hijo mayor, Mircea, murieron asesinados el 27 de diciembre después de que Juan Hunyadi, gobernador regente de Hungría, invadiera Valaquia en 1447. Hunyadi colocó en el trono a Vladislao II, primo segundo de Dracul, quien en el otoño boreal de 1448 lo acompañó en una campaña militar contra los otomanos.</p>
+        </div>
+      </div>
+    
+</body>
+</html>
