@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+</head>
+<body>
+
+    <script>
+      var i = 0;
+      var images = [];
+      var time = 3000;
+
+      images[0] = 'javaimages/dmc.jpg';
+      images[1] = 'javaimages/doom.jpg';
+      images[2] = 'javaimages/darksouls.jpg';
+      images[3] = 'javaimages/btf.jpg';
+      images[4] = 'javaimages/assasins.jpg';
+
+      function rotation(){
+        document.slide.src = images[i];
+
+        if(i < images.length - 1 ){
+            i++ ;
+        
+        }
+        else{
+            i = 0;
+        }
+      }
+
+      setTimeout("rotation()", time);
+
+      window.onload = rotation;
+
+    </script>
+    <img name="slide"  >
+</body>
+</html>
