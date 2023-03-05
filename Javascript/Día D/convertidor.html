@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="valor">Introduce un valor numérico:</label>
+      <input type="number" id="valor" name="valor">
+      <br>
+      <button type="button" onclick="convertirAEuros()">Convertir a euros</button>
+      <button type="button" onclick="convertirADolares()">Convertir a dólares</button>
+      <br>
+      <label for="resultado">Resultado:</label>
+      <span id="resultado"></span>
+    </form>
+    <script>
+      function convertirAEuros() {
+        var valor = document.getElementById("valor").value;
+        var resultado = valor * 0.84; // 1 euro = 0.84 dólares
+        document.getElementById("resultado").innerHTML = resultado.toFixed(2) + " euros";
+      }
+      function convertirADolares() {
+        var valor = document.getElementById("valor").value;
+        var resultado = valor * 1.19; // 1 dólar = 1.19 euros
+        document.getElementById("resultado").innerHTML = resultado.toFixed(2) + " dólares";
+      }
+    </script>
+  </body>
+</html>

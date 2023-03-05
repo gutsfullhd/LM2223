@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario con Validación de Campos</title>
+	
+</head>
+<body>
+	<h1>Formulario de Contacto</h1>
+	<form onsubmit="return validarFormulario()">
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre"><br><br>
+		
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email"><br><br>
+		
+		<label for="telefono">Teléfono:</label>
+		<input type="text" id="telefono" name="telefono"><br><br>
+		
+		<label for="mensaje">Mensaje:</label>
+		<textarea id="mensaje" name="mensaje"></textarea><br><br>
+		
+		<input type="submit" value="Enviar">
+
+        <script type="text/javascript">
+            function validarFormulario() {
+                // Obtener los valores de los campos
+                var nombre = document.getElementById("nombre").value;
+                var email = document.getElementById("email").value;
+                var telefono = document.getElementById("telefono").value;
+                var mensaje = document.getElementById("mensaje").value;
+                
+                // Validar que el nombre no esté vacío
+                if(nombre == "") {
+                    alert("Por favor, ingrese su nombre.");
+                    return false;
+                }
+                
+                // Validar que el email sea válido
+                if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert("Por favor, ingrese un email válido.");
+                    return false;
+                }
+                
+                // Validar que el teléfono sea numérico
+                if(isNaN(telefono)) {
+                    alert("Por favor, ingrese un teléfono válido.");
+                    return false;
+                }
+                
+                // Validar que el mensaje no esté vacío
+                if(mensaje == "") {
+                    alert("Por favor, ingrese su mensaje.");
+                    return false;
+                }
+                
+                return true;
+            }
+        </script>
+	</form>
+</body>
+</html>
