@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número del 1 al 5</title>
+</head>
+<body>
+
+    <h2>Adivina el número del 1 al 5</h2>
+
+    <h4>
+        Intenta adivinar un número del 1 al 5
+    </h4>
+
+    <input type="number" id="numero" placeholder="Introduce tu número"> <button onclick="adivina()">ADIVINA</button>
+
+    <div id="cronometro"></div>
+
+    <div id="mejor-tiempo"></div>
+
+    <script>
+    
+        let mejorTiempo = localStorage.getItem("mejorTiempo");
+
+        function adivina() {
+            let num = document.getElementById('numero').value;
+            let ran = Math.ceil(Math.random() * 5);
+            if (num < 1 || num > 5) {
+                alert('El número debe estar comprendido entre 1 y 5');
+            } else if (ran != num) {
+                alert('Lo siento!, el número era ' + ran);
+            } else {
+                alert('¡Enhorabuena! ¡Acertaste el número!');
+                let tiempoActual = parseInt(document.getElementById('cronometro').innerHTML.replace("Tiempo: ", "").replace(" segundos", ""));
+                if (!mejorTiempo || tiempoActual < mejorTiempo) {
+                    mejorTiempo = tiempoActual;
+                    localStorage.setItem("mejorTiempo", mejorTiempo);
+                    actualizarMejorTiempo();
+                }
+                reiniciarCronometro();
+            }
+        }
+
+        function iniciarCronometro() {
+            let segundos = 0;
+            let cronometro = setInterval(function() {
+                segundos++;
+                document.getElementById("cronometro").innerHTML = "Tiempo: " + segundos + " segundos";
+            }, 1000);
+            return cronometro;
+        }
+
+        function reiniciarCronometro() {
+            clearInterval(cronometro);
+            cronometro = iniciarCronometro();
+        }
+
+        function actualizarMejorTiempo() {
+            document.getElementById("mejor-tiempo").innerHTML = "Mejor tiempo: " + mejorTiempo + " segundos";
+        }
+
+        if (mejorTiempo) {
+            actualizarMejorTiempo();
+        }
+
+        let cronometro = iniciarCronometro();
+    </script>
+</body>
+</html>
+
